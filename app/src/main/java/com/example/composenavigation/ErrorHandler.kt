@@ -1,9 +1,11 @@
 package com.example.composenavigation
 
-open class ErrorHandler {
+interface ErrorHandler {
+
+    fun errorHandlerCustom()
 
 
-    open fun printError(
+    fun printError(
         message: String,
         ip: String,
     ) {
@@ -12,9 +14,18 @@ open class ErrorHandler {
     }
 }
 
-class NewErrorHandler : ErrorHandler() {
+class NewErrorHandler : ErrorHandler {
+    override fun errorHandlerCustom() {
+        // this is not interface Segregation -> نقض اصل چهارم
+    }
+
     override fun printError(message: String, ip: String) {
         super.printError(message, ip)
         println("override the function")
     }
 }
+
+
+/*
+interface Segregation -> کلاس های نباید فانکشنی داشته باشند که بهش نیازی ندارند
+ */
