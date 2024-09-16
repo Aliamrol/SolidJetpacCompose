@@ -4,6 +4,7 @@ import androidx.navigation.NavController
 
 class LoginRepository(
     private val auth: FakeAuth,
+    private val errorHandler: ErrorHandler,
     private val navController: NavController
 
 ) {
@@ -13,9 +14,12 @@ class LoginRepository(
             println("user is login to system")
             navController.navigate(Screen.Second.withArgs(userName, password))
         } else {
-            println("username or password is incorrect")
-            println("userIp is : 8.8.8.8")
+            errorHandler.printError("userName or password is incorrect", "8.8.8.8") // it is single responsibility
         }
     }
 
 }
+
+/*
+single responsibility -> هر کلاس یا فانکشن صرفا یه کار مخصوص به خود را انجام میدهند
+ */

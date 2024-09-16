@@ -26,7 +26,7 @@ fun HomeScreen(
         Text(text = "My home screen")
         Spacer(modifier = Modifier.height(40.dp))
         Button(onClick = {
-            LoginRepository(FakeAuth(), navController).loginUser(
+            LoginRepository(FakeAuth(), ErrorHandler(), navController).loginUser(
                 userName = "AliAmrol",
                 password = "Aliamrol81"
             )
