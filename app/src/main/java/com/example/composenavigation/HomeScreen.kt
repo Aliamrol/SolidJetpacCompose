@@ -26,15 +26,10 @@ fun HomeScreen(
         Text(text = "My home screen")
         Spacer(modifier = Modifier.height(40.dp))
         Button(onClick = {
-            val person = Person(
-                name = "Ali",
-                family = "Amrol",
-                age = 20,
-                phone = "09057510010"
+            LoginRepository(FakeAuth(), navController).loginUser(
+                userName = "AliAmrol",
+                password = "Aliamrol81"
             )
-            val gson = Gson()
-            val personAsString = gson.toJson(person)
-            navController.navigate(Screen.Second.withArgs(personAsString))
         }) {
             Text("Go To Second Screen")
         }

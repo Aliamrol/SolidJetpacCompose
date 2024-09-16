@@ -19,15 +19,20 @@ fun SetupNavGraph(
             HomeScreen(navController = navController)
         }
         composable(
-            route = Screen.Second.route + "/{person}",
-            arguments = listOf(navArgument("person") {
-                type = NavType.StringType
-            }
+            route = Screen.Second.route + "/{userName}/{password}",
+            arguments = listOf(
+                navArgument("userName") {
+                    type = NavType.StringType
+                },
+                navArgument("password") {
+                    type = NavType.StringType
+                }
             )
         ) {
             SecondScreen(
                 navController = navController,
-                person = it.arguments?.getString("person").toString()
+                userName = it.arguments?.getString("userName").toString(),
+                password = it.arguments?.getString("password").toString()
             )
         }
     }

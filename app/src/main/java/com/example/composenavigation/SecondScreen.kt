@@ -19,7 +19,8 @@ import com.google.gson.Gson
 @Composable
 fun SecondScreen(
     navController: NavController,
-    person: String,
+    userName: String,
+    password: String
 ) {
     Column(
         modifier = Modifier
@@ -27,12 +28,7 @@ fun SecondScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        val gson = Gson()
-        val myPerson = gson.fromJson(person, Person::class.java)
-        Text(
-            text = "name : ${myPerson.name} , family:${myPerson.family} , age: ${myPerson.age} , phone: ${myPerson.phone}",
-            color = Color.Magenta
-        )
+        Text(text = "userName : $userName , password : $password")
         Spacer(modifier = Modifier.height(40.dp))
         Button(onClick = {
 
