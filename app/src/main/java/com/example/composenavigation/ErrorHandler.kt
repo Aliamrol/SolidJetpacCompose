@@ -27,5 +27,7 @@ class NewErrorHandler : ErrorHandler {
 
 
 /*
-interface Segregation -> کلاس های نباید فانکشنی داشته باشند که بهش نیازی ندارند
+dependency inversion -> کلاس های سطح بالا نباید به کلاس های سطح پایین وابستگی داشته باشن
  */
+
+
