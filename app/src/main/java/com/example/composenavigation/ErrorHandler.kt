@@ -1,13 +1,20 @@
 package com.example.composenavigation
 
-class ErrorHandler {
+open class ErrorHandler {
 
 
-    fun printError(
+    open fun printError(
         message: String,
         ip: String,
     ) {
         println(message)
         println("userIp is : $ip")
+    }
+}
+
+class NewErrorHandler : ErrorHandler() {
+    override fun printError(message: String, ip: String) {
+        super.printError(message, ip)
+        println("override the function")
     }
 }
